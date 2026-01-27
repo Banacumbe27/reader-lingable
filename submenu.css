@@ -1,0 +1,44 @@
+body{
+    background-color:black;
+}
+.container{
+    overflow-x:hidden;
+    overflow-y: scroll;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    flex-direction: column; 
+    align-items: flex-start;
+    gap:2vmax;
+}
+input{
+    font-size:3vmax;
+    width:60vw;
+}
+textarea{
+    font-size:1.5vmax;
+    width:80vw;
+    resize:none;
+}
+.content{
+height:50vh;
+}
+.description{
+    height:10vh;
+}
+.row{
+    display:flex;
+    flex-direction:row;
+}
+.row img{
+    width:20vw;
+    height:20vw;
+}
+.column{
+display:flex;
+flex-direction:column;
+}

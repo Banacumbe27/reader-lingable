@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="submenu.css">
+    <title>Add</title>
+</head>
+<body>
+        <form class="container" onsubmit="addPost(event)">
+            <div class="row">
+            <div class="column"> 
+        <input class="url" placeholder="img-url" name="url" required oninput="updateImg()">
+        <input type="button" class="random" onclick="randomImg()" value="random image?">
+        <input class="title" placeholder="Title" name="title" required maxlength="40">
+        <textarea class="description" placeholder="Description" name="description" required maxlength="100"></textarea>
+            </div>
+            <img>
+            </div>
+      
+        <textarea class="content" placeholder="Content" name="content" required maxlength="2000" oninput="wordCount()"></textarea>
+        <input class="submit" type="submit"  value="SUBMIT (0/2000)">
+        </form>
+    </div>
+</body>
+<script src="constants.js"></script>
+<script src="add.js"></script>
+</html>
