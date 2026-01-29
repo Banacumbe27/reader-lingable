@@ -1,5 +1,5 @@
 body{
-    background-color:black;
+    background-color:#0b1c3d;
 }
 .container{
     overflow-x:hidden;
@@ -12,17 +12,22 @@ body{
     display:flex;
     justify-content: center;
     flex-direction: column; 
-    align-items: flex-start;
     gap:2vmax;
 }
 input{
     font-size:3vmax;
     width:60vw;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 5px white;
 }
 textarea{
     font-size:1.5vmax;
     width:80vw;
     resize:none;
+    border-radius: 15px;
+    box-shadow: 0 0 5vmax 1px white;
+
+
 }
 .content{
 height:50vh;
@@ -37,8 +42,16 @@ height:50vh;
 .row img{
     width:20vw;
     height:20vw;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 5px white;
+
 }
 .column{
 display:flex;
 flex-direction:column;
+gap:3vmax;
+}
+.submit{
+    width:fit-content;
+  
 }

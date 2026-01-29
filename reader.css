@@ -34,6 +34,7 @@ width:100%;
 .cover p{
     padding:1vmax;
     margin:0;
+    background-color:white;
 }
 .title{
     font-size:5vmax;
@@ -47,6 +48,8 @@ width:100%;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size:3vmax;
     padding:5vmax;
+    background-color:white;
+    border-radius:15px;
 }
 .column{
     display:flex;
