@@ -3,22 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADMIN</title>
+    <meta name="theme-color" content="#F5F5F7">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="story.css">
+    <link rel="stylesheet" href="admin.css">
 </head>
 <body>
     <div class="container">
+        <!-- Delete confirmation modal -->
         <div class="delete_menu-container hidden">
             <div class="delete_menu">
-                <p class="story_to_del">Delete HI</p>
+                <p class="story_to_del">Delete Article</p>
                 <div class="row">
-                    <div class="cancel">Cancel</div>
-                    <div class="delete">Delete</div>
+                    <button class="cancel">Cancel</button>
+                    <button class="delete">Delete</button>
                 </div>
             </div>
         </div>
+        
+        <!-- Admin story menu -->
+        <div style="width: 100%; text-align: center; padding: 2rem 0;">
+            <h1 class="admin_title">📰 Admin Dashboard</h1>
+        </div>
         <div class="story_menu"></div>
     </div>
+    
+    <script src="constants.js"></script>
+    <script src="admin.js"></script>
 </body>
-<script src="constants.js"></script>
-<script src="admin.js"></script>
 </html>

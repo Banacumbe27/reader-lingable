@@ -1,57 +1,208 @@
-body{
-    background-color:#0b1c3d;
+
+
+
+/* ========================================== 
+   ADD/EDIT FORM PAGE - APPLE STYLED
+   ========================================== */
+
+:root {
+    --primary: #0071E3;
+    --primary-light: #0077ED;
+    --text-primary: #1D1D1F;
+    --text-secondary: #86868B;
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F5F5F7;
+    --border: rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.2);
 }
-.container{
-    overflow-x:hidden;
+
+body {
+    background: linear-gradient(135deg, #F5F5F7 0%, #FFFFFF 100%);
+}
+
+.container {
+    overflow-x: hidden;
     overflow-y: scroll;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100vw;
-    height:100vh;
-    display:flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
     justify-content: center;
-    flex-direction: column; 
-    gap:2vmax;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    gap: 2rem;
 }
-input{
-    font-size:3vmax;
-    width:60vw;
-    border-radius: 15px;
-    box-shadow: 0 0 15px 5px white;
-}
-textarea{
-    font-size:1.5vmax;
-    width:80vw;
-    resize:none;
-    border-radius: 15px;
-    box-shadow: 0 0 5vmax 1px white;
 
+.form-wrapper {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: fadeInUp 0.6s ease-out;
+}
 
+input, textarea {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 1rem;
+    color: var(--text-primary);
+    transition: all var(--transition-sm);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
-.content{
-height:50vh;
-}
-.description{
-    height:10vh;
-}
-.row{
-    display:flex;
-    flex-direction:row;
-}
-.row img{
-    width:20vw;
-    height:20vw;
-    border-radius: 15px;
-    box-shadow: 0 0 15px 5px white;
 
+input::placeholder, textarea::placeholder {
+    color: var(--text-secondary);
 }
-.column{
-display:flex;
-flex-direction:column;
-gap:3vmax;
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.1);
+    transform: translateY(-2px);
 }
-.submit{
-    width:fit-content;
-  
+
+input {
+    height: auto;
+    animation: slideInLeft 0.6s ease-out backwards;
+}
+
+input:nth-of-type(1) { animation-delay: 0s; }
+input:nth-of-type(2) { animation-delay: 0.1s; }
+
+textarea {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    width: 100%;
+    min-height: 300px;
+    resize: vertical;
+    animation: slideInLeft 0.6s ease-out 0.2s backwards;
+}
+
+textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.content {
+    height: auto;
+}
+
+.description {
+    height: auto;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    align-items: flex-start;
+    animation: slideInRight 0.6s ease-out 0.3s backwards;
+}
+
+.row img {
+    width: clamp(150px, 25vw, 250px);
+    height: clamp(150px, 25vw, 250px);
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    object-fit: cover;
+    object-position: center;
+    transition: all var(--transition-md);
+    cursor: pointer;
+}
+
+.row img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+/* Button styling */
+.submit {
+    width: fit-content;
+    padding: 0.875rem 2rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition-sm);
+    box-shadow: var(--shadow-md);
+    animation: fadeInUp 0.6s ease-out 0.4s backwards;
+    align-self: center;
+}
+
+.submit:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 113, 227, 0.3);
+}
+
+.submit:active {
+    transform: translateY(-2px);
+}
+
+/* Label styling for accessibility */
+label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Loading state */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Success/Error messages */
+.message {
+    padding: 1rem;
+    border-radius: 12px;
+    animation: slideInLeft 0.4s ease-out;
+}
+
+.message.success {
+    background: rgba(52, 211, 153, 0.1);
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    color: #059669;
+}
+
+.message.error {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #dc2626;
 }
